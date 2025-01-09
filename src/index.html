@@ -88,6 +88,12 @@
 </head>
 <body>
     <div id="page-container" class="p-5 h-screen box-border flex">
+        <script>
+            (async function() {
+                const text  = await( await fetch(`/api/message`)).json();
+                console.log(text)
+            }());
+        </script>
         <!-- Chat Container -->
         <div id="chat-container" class="w-1/3 h-full p-4 overflow-y-auto bg-black shadow-md border-r border-green-500">
             <h2 class="text-lg font-semibold mb-4 text-green-400">Tracked Messages</h2>
@@ -95,6 +101,7 @@
 
         <!-- Right Panel -->
         <div class="w-2/3 h-full flex flex-col">
+            <div><a href="/.auth/login/github">Login</a> | <a href="/.auth/logout">Log out</a></div>
             <!-- Hashtag Chart -->
             <div id="hashtag-chart" class="h-3/4 bg-black shadow-md border border-green-500 p-4">
                 <h2 class="text-lg font-semibold mb-4 text-green-400">Top Trending Hashtags (5 Minutes)</h2>

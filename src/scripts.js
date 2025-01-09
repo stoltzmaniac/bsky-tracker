@@ -30,7 +30,6 @@ fetch('./profanity-list.json')
     .then((response) => response.json())
     .then((data) => {
         blocklist = data.map((word) => word.toLowerCase().trim());
-        console.log('Profanity blocklist loaded:', blocklist);
     })
     .catch((error) => console.error('Error loading blocklist:', error));
 
